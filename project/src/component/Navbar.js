@@ -1,6 +1,7 @@
 import {useRef, useState} from "react"
 import {FaBars,FaTimes} from "react-icons/fa"
 import "../styles/Navbar.css"
+import { Link } from "react-router-dom"
 const NavBar=()=>{
     const ref=useRef()
 
@@ -19,11 +20,11 @@ const NavBar=()=>{
         <header className="nav_comp">
             <h3>Logo</h3>
             <nav className="menu_items" ref={ref}>
-                <a href="">Home</a>
-                <a href="">Products</a>
-                <a href="">About us</a>
-                <a href="">Contact</a>
-                <a href="">Cart</a>
+                <Link to="#">Home</Link>
+                <Link to="#">Products</Link>
+                <Link to="/about">About us</Link>
+                <Link to="/contact">Contact</Link>
+                <Link to="#">Cart</Link>
             </nav>
             {icon==='close'?<button className="nav-btn" onClick={showNavbar}>
                 <FaBars />
